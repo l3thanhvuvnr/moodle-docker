@@ -45,6 +45,8 @@ sudo docker compose exec lms cat /usr/local/etc/php/PHP2SHELL_PATCHED
 ```
 * Lưu ý: `php -v` vẫn hiển thị 7.4.33 vì backport không đổi số phiên bản; file `PHP2SHELL_PATCHED` mới là dấu hiệu đã vá.
 
+Máy chủ **Windows/IIS** (PHP 7.4 FastCGI): xem `windows/HUONG-DAN.md` để build PHP 7.4.33 NTS x64 có cùng bản vá và triển khai lên IIS.
+
 # Setup ssl cho LMS
 1. Copy chứng chỉ ssl vào /config/apache/ssl
 * Lưu ý: Chứng chỉ ssl phải gồm 2 file .crt và .key

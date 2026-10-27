@@ -1,0 +1,4 @@
+# Patch php-src phải giữ nguyên byte (LF) để khớp sha256 và git apply được, kể cả khi checkout trên Windows.
+*.patch -text
+# Script Windows luôn dùng CRLF.
+*.bat text eol=crlf
