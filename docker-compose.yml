@@ -1,7 +1,13 @@
-version: "2"
 services:
   lms:
-    image: moodlehq/moodle-php-apache:7.4
+    # Build từ Dockerfile (FROM moodlehq/moodle-php-apache:${PHP_VERSION}) + vá PHP2Shell.
+    # pull: true => luôn kéo base image mới nhất khi build.
+    build:
+      context: .
+      pull: true
+      args:
+        PHP_VERSION: "${PHP_VERSION:-7.4}"
+    image: "lms-php-apache:${PHP_VERSION:-7.4}"
     restart: always
     ports:
       - ${MOODLE_DOCKER_WEB_PORT}:80
